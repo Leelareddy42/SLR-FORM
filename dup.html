@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+        .bd{
+            background-image: url(image.jpg);     
+            color: rgb(113, 183, 159);
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: large;
+            font-family:Cambria, Cochin, Georgia, Times, Times New Roman, 'serif';
+            font-weight: bold;
+
+        }
+        .animated-text {
+    font-size: 1.5em;
+    opacity: 0.2;
+    animation: fadeInRight 2.5s forwards;
+}
+
+@keyframes fadeInRight {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+        
+        </style>
+    </head>
+    <body class="bd">
+        <p class="animated-text"> YOUR FORM IS SUBMITTED</p>
+    </body>
+</html>

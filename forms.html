@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Form</title>
+    <style>
+        body {
+            background-image: url(image.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #c2d8eb;
+        }
+        .form {
+            padding: 30px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background-color: #9fead1;
+            width: 250px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: black;
+            font-weight: bolder;
+        }
+        input, textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .button {
+            background-color: #00aeff;
+            color: rgb(255, 255, 255);
+            border: #000;
+            box-shadow: #00aeff;
+            padding: 10px;
+            cursor: grab;
+            font-weight: bold; 
+        } 
+    </style>
+</head>
+<body>
+    <div class="form">
+        <form method="get" action="dup.html">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="rollNumber">Roll Number:</label>
+            <input type="text" id="rollNumber" name="rollNumber" readonly>
+
+            <label for="leaveFrom">Leave From:</label>
+            <input type="date" id="leaveFrom" name="leaveFrom" required>
+
+            <label for="leaveTo">Leave To:</label>
+            <input type="date" id="leaveTo" name="leaveTo" required>
+
+            <label for="reason">Reason for Leave:</label>
+            <textarea id="reason" name="reason" rows="4" required></textarea>
+            
+            <button class="button" type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        // Get the roll number from the URL
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('rollNumber').value = params.get('rollNumber') || '';
+    </script>
+</body>
+</html>
